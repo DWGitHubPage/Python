@@ -2,7 +2,7 @@
 
 from math import *
 
-""" (GCD) Greatest Common Denominator also called (HCF)
+"""(GCD) Greatest Common Divisor also called (HCF)
 Highest Common Factor."""
 
 def gcd(x, y, verbose=True):
