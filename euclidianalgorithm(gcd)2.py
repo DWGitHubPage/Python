@@ -10,5 +10,5 @@ def gcd(a, b):
 a = 30
 b= 465
    
-print ("The gcd of {} and {} is:".format(a, b)) 
+print (f"The gcd of {a} and {b} is:") 
 print (gcd(a,b)) 
