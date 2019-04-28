@@ -1,4 +1,5 @@
 # Python3.7.3
+# Insertion sort.
 
 def insertionSort(b): 
     for i in range(1, len(b)): 
