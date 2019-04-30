@@ -56,3 +56,12 @@ for x in range(0, 276):
 
 colors.show()
 colors.save('pixels.png')
+
+
+# Inserting numbers into a list.
+
+data = [1, 2, 3, 7, 8, 9, 10, 11, 12]
+
+data[3:3] = [4, 5, 6] # Inserting 4, 5, 6 between 3 & 7.
+
+print(data)
