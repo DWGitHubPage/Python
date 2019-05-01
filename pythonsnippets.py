@@ -70,7 +70,6 @@ and prints total sloc"""
 
 import os
 
-
 cur_path = os.getcwd()
 ignore_set = set(["__init__.py", "count_sourcelines.py"])
 
