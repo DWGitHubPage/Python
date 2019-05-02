@@ -1,5 +1,6 @@
 # Python3.7.3
-#Using python-constraint examples.
+"""Using python-constraint examples. 
+A big thank you to https://stackabuse.com/constraint-programming-with-python-constraint/"""
 
 import constraint
 
