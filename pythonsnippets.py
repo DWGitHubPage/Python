@@ -1,5 +1,11 @@
 # Python3.7.3
 
+
+# Finding the path of a module.
+import a_module
+print(a_module.__file__)
+
+
 #Pretty Printing
 import pprint as pp
 animals = [{'animal': 'dog', 'legs': 4, 'breeds': ['Border Collie',
