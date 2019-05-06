@@ -1,6 +1,11 @@
 # Python3.7.3
 
 
+# Checking version of Python.
+import sys
+print("My version Number: {}".format(sys.version))
+
+
 # Finding the path of a module.
 import a_module
 print(a_module.__file__)
