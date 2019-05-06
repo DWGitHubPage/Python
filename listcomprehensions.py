@@ -1,5 +1,8 @@
 # Python 3.7.3
 
+list1 = [i for i in range (2, 16, 2)]
+print(list1)
+
 
 # Computing the square of each number.
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
