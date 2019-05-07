@@ -1,5 +1,8 @@
 # Python3.7.3
-
+"""Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
+enumeration, iterable unpacking, data classes, pretty printing, grouping
+data by attributes, removing duplicates, coloring gradient pixels, 
+grouping data by attributes, inserting numbers into list, """
 
 # Checking version of Python.
 import sys
@@ -9,6 +12,140 @@ print("My version Number: {}".format(sys.version))
 # Finding the path of a module.
 import a_module
 print(a_module.__file__)
+
+
+# Built-in LRU cache.
+
+import time
+def fib(number: int) -> int:
+    if number == 0: return 0
+    if number == 1: return 1
+    
+    return fib(number-1) + fib(number-2)
+start = time.time()
+fib(1)
+print(f'Duration: {time.time() - start}s')
+
+
+from functools import lru_cache
+@lru_cache(maxsize=512)
+def fib_memoization(number: int) -> int:
+    if number == 0: return 0
+    if number == 1: return 1
+    
+    return fib_memoization(number-1) + fib_memoization(number-2)
+start = time.time()
+fib_memoization(40)
+print(f'Duration: {time.time() - start}s')
+
+
+# F strings.
+
+person = "Nicole"
+action = "ticket"
+message = '{} has logged in and is working on her first {}.'.format(
+            person, action)
+
+print(message)
+
+person = "Nicole"
+action = "ticket"
+message = f'{person} has logged in and is working on her first {action}.'
+
+print(message)
+
+
+# Using pathlib.
+
+from pathlib import Path
+
+root = Path('post_sub_folder')
+print(root)
+
+# post_sub_folder
+path = root / 'happy_user'
+
+# Make the path absolute
+print(path.resolve())
+
+
+# Type hinting.
+
+def sentence_has_animal(sentence: str) -> bool:
+  return "animal" in sentence
+
+print(sentence_has_animal("Donald had a farm without animals"))
+
+def greeting(name: str) -> str:
+    return'Hello ' + 'name'
+
+
+# Enumeration.
+
+from enum import Enum, auto
+class Monster(Enum):
+    ZOMBIE = auto()
+    WARRIOR = auto()
+    BEAR = auto()
+    
+print(Monster.ZOMBIE)
+print(Monster.BEAR)
+
+for monster in Monster:
+    print(monster)
+
+
+# Iterable unpacking.
+
+head, *body, tail = range(5)
+print(head, body, tail)
+# 0 [1, 2, 3] 4
+py, filename, *cmds = "python3.7.3 script.py -n 5 -l 15".split()
+print(py)
+print(filename)
+print(cmds)
+# python3.7.3
+# script.py
+# ['-n', '5', '-l', '15']
+first, _, third, *_ = range(10)
+print(first, third)
+
+
+# Data classes 3.7
+
+# Without the new data class type.
+class Armor:
+    
+    def __init__(self, armor: float, description: str, level: int = 1):
+        self.armor = armor
+        self.level = level
+        self.description = description
+                 
+    def power(self) -> float:
+        return self.armor * self.level
+    
+armor = Armor(5.2, "Common armor.", 2)
+armor.power()
+
+print(armor)
+
+
+# The same implementation but with dataclass.
+
+from dataclasses import dataclass
+@dataclass
+class Armor:
+    armor: float
+    description: str
+    level: int = 1
+    
+    def power(self) -> float:
+        return self.armor * self.level
+    
+armor = Armor(5.2, "Common armor.", 2)
+armor.power()
+# 10.4
+print(armor)
 
 
 #Pretty Printing
