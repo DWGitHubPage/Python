@@ -2,7 +2,7 @@
 """Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
 enumeration, iterable unpacking, data classes, pretty printing, grouping
 data by attributes, removing duplicates, coloring gradient pixels, 
-grouping data by attributes, inserting numbers into list, """
+grouping data by attributes, inserting numbers into list, and hash. """
 
 # Checking version of Python.
 import sys
@@ -234,3 +234,22 @@ for linenumbercount, filename in loclist:
     print ("%05d lines in %s" % (linenumbercount, filename))
 
 print ("\nTotal: %s lines (%s)" %(sum([x[0] for x in loclist]), cur_path))
+
+
+# Hash examples.
+
+int_val = 4
+str_val = 'Hash string value.'
+flt_val = 24.56
+  
+print ("The integer hash value is : " + str(hash(int_val))) 
+print ("The string hash value is : " + str(hash(str_val))) 
+print ("The float hash value is : " + str(hash(flt_val))) 
+
+print('\n')
+
+tuple_val = (1, 2, 3, 4, 5) 
+  
+print ("The tuple hash value is : " + str(hash(tuple_val))) 
+
+
