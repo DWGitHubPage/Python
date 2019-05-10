@@ -14,6 +14,10 @@ import a_module
 print(a_module.__file__)
 
 
+# Breakpoint syntax.
+import pdb; pdb.set_trace()
+
+
 # Built-in LRU cache.
 
 import time
