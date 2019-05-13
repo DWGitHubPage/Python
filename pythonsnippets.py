@@ -259,3 +259,33 @@ tuple_val = (1, 2, 3, 4, 5)
 print ("The tuple hash value is : " + str(hash(tuple_val))) 
 
 
+# Timeit module.
+
+import timeit
+
+timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)
+
+timeit.timeit('"-".join([str(n) for n in range(100)])', number=10000)
+
+timeit.timeit('"-".join(map(str, range(100)))', number=10000)
+
+
+# Opening url's with webbrowser library.
+
+import webbrowser
+
+# Opening from the command line.
+python -m webbrowser -t "https://alistapart.com"
+
+# Opening URL's.
+
+url = 'https://news.ycombinator.com'
+
+# Open URL in a new tab, if a browser window is already open.
+webbrowser.open_new_tab(url)
+
+# Open URL in new window, raising the window if possible.
+webbrowser.open_new(url)
+
+
+
