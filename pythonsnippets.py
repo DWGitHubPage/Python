@@ -2,7 +2,8 @@
 """Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
 enumeration, iterable unpacking, data classes, pretty printing, grouping
 data by attributes, removing duplicates, coloring gradient pixels, 
-grouping data by attributes, inserting numbers into list, and hash. """
+grouping data by attributes, inserting numbers into list, check memory usage of object, 
+howdoi, open URL's, timeit, and hash. """
 
 # Checking version of Python.
 import sys
@@ -41,6 +42,13 @@ def fib_memoization(number: int) -> int:
 start = time.time()
 fib_memoization(40)
 print(f'Duration: {time.time() - start}s')
+
+
+# Checking the memory usage of an object.
+ 
+import sys 
+x = 1
+print(sys.getsizeof(x))
 
 
 # F strings.
@@ -288,4 +296,6 @@ webbrowser.open_new_tab(url)
 webbrowser.open_new(url)
 
 
+# Howdoi: Find answers to questions from the command line.
 
+howdoi (ask whatever you woul like)
