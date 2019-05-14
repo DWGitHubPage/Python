@@ -1,9 +1,28 @@
 # Python3.7.3
-"""Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
+"""bz2, Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
 enumeration, iterable unpacking, data classes, pretty printing, grouping
 data by attributes, removing duplicates, coloring gradient pixels, 
 grouping data by attributes, inserting numbers into list, check memory usage of object, 
 howdoi, open URL's, timeit, and hash. """
+
+
+# Bz2.
+
+import bz2
+
+data = b"""\
+ Donec rhoncus quis sapien sit amet molestie. Fusce scelerisque vel augue
+... nec ullamcorper. Nam rutrum pretium placerat. Aliquam vel tristique lorem,
+... felis. Pellentesque semper nunc sit amet nibh ullamcorper, ac elementum
+... dolor luctus. Curabitur lacinia mi ornare consectetur vestibulum."""
+print(data)
+
+c = bz2.compress(data)
+print(len(data) / len(c)) # Data compression ratio.
+
+d = bz2.decompress(c) 
+print(data == d) # Check equality to original object after round-trip.
+
 
 # Checking version of Python.
 import sys
