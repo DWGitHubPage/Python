@@ -1,5 +1,5 @@
 # Python3.7.3
-# Creating a public and private RSA key pair.
+# Two ways to create public and private RSA key pairs.
 
 
 from cryptography.hazmat.primitives import serialization
@@ -27,3 +27,13 @@ print('Private key = ')
 print(private_key_str)
 print('Public key = ')
 print(public_key_str)
+
+
+# Another simpler method to create keys.
+
+import sys
+import paramiko
+
+key = paramiko.RSAKey.generate(4096)
+print(key.get_base64())  # print public key
+key.write_private_key(sys.stdout)  # print private key
