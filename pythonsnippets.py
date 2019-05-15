@@ -306,7 +306,8 @@ python -m webbrowser -t "https://alistapart.com"
 
 # Opening URL's.
 
-url = 'https://news.ycombinator.com'
+# The latest news about Python on HackerNews.
+url = 'https://hn.algolia.com/?query=python&sort=byDate&prefix&page=0&dateRange=all&type=story'
 
 # Open URL in a new tab, if a browser window is already open.
 webbrowser.open_new_tab(url)
