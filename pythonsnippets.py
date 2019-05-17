@@ -1,5 +1,6 @@
 # Python3.7.3
-"""bz2, Import sys, path of module, built-in LRU cache, f-strings, pathlib, type hinting, 
+"""bz2, help with a file, looking up attributes & methods, import sys, path of module, 
+built-in LRU cache, f-strings, pathlib, type hinting, 
 enumeration, iterable unpacking, data classes, pretty printing, grouping
 data by attributes, removing duplicates, coloring gradient pixels, 
 grouping data by attributes, inserting numbers into list, check memory usage of object, 
@@ -61,6 +62,18 @@ def fib_memoization(number: int) -> int:
 start = time.time()
 fib_memoization(40)
 print(f'Duration: {time.time() - start}s')
+
+# How to get help with a file.
+
+import(file you want help on)
+help name of file
+
+# Looking up attributes and methods.
+
+from datetime import datetime
+dir(datetime)
+
+
 
 
 # Checking the memory usage of an object.
