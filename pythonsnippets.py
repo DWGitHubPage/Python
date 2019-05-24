@@ -4,7 +4,7 @@ built-in LRU cache, f-strings, pathlib, type hinting,
 enumeration, iterable unpacking, data classes, pretty printing, grouping
 data by attributes, removing duplicates, coloring gradient pixels, 
 grouping data by attributes, inserting numbers into list, check memory usage of object, 
-howdoi, open URL's, timeit, and hash. """
+howdoi, open URL's, timeit, hash, & the hash of infinity in Python matches pi. """
 
 
 # Bz2.
@@ -332,3 +332,13 @@ webbrowser.open_new(url)
 # Howdoi: Find answers to questions from the command line.
 
 howdoi (ask whatever you woul like)
+
+
+# The hash of infinity in Python matches pi.
+import sys
+
+inf = float('inf')
+print(hash(inf))
+print(sys.hash_info.inf)
+
+
