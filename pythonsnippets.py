@@ -1,10 +1,10 @@
 # Python3.7.3
 """bz2, help with a file, looking up attributes & methods, import sys, path of module, 
-built-in LRU cache, f-strings, pathlib, type hinting, 
-enumeration, iterable unpacking, data classes, pretty printing, grouping
-data by attributes, removing duplicates, coloring gradient pixels, 
-grouping data by attributes, inserting numbers into list, check memory usage of object, 
-howdoi, open URL's, timeit, hash, & the hash of infinity in Python matches pi. """
+built-in LRU cache, f-strings, pathlib, type hinting, enumeration, wrapping an iterable 
+with enumerate, iterable unpacking, data classes, pretty printing, grouping data by 
+attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
+inserting numbers into list, check memory usage of object, howdoi, open URL's, 
+timeit, hash, & the hash of infinity in Python matches pi. """
 
 
 # Bz2.
@@ -74,8 +74,6 @@ from datetime import datetime
 dir(datetime)
 
 
-
-
 # Checking the memory usage of an object.
  
 import sys 
@@ -137,6 +135,13 @@ print(Monster.BEAR)
 
 for monster in Monster:
     print(monster)
+  
+ 
+# Wrapping an iterable with enumerate.
+
+a = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'kickball']
+for index, item in enumerate(a):
+    print (index, item)
 
 
 # Iterable unpacking.
