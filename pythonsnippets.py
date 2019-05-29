@@ -81,6 +81,12 @@ x = 1
 print(sys.getsizeof(x))
 
 
+# Returning an object's memory address.
+
+x = 4
+print(id(x))
+
+
 # F strings.
 
 person = "Nicole"
