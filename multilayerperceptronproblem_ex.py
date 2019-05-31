@@ -1,3 +1,7 @@
+# Python3.7.3
+"""Multilayer perceptron problem example. 
+A big thank you to https://builtin.com/data-science/deep-learning-python for the example."""
+
 import numpy as np
 
 print("Enter two values for input layers")
