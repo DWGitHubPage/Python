@@ -4,7 +4,9 @@ built-in LRU cache, f-strings, pathlib, type hinting, enumeration, wrapping an i
 with enumerate, iterable unpacking, data classes, pretty printing, grouping data by 
 attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
 inserting numbers into list, check memory usage of object, howdoi, open URL's, 
-timeit, hash, & the hash of infinity in Python matches pi. """
+hash, storing values in a list with new variables, timeit, the hash of infinity in 
+Python matches pi, creating a string from all the elements in a variable, printing words multiple 
+times with one line of code. """
 
 
 # Bz2.
@@ -274,7 +276,6 @@ and prints total sloc"""
 
 import os
 
-
 cur_path = os.getcwd()
 ignore_set = set(["__init__.py", "count_sourcelines.py"])
 
@@ -308,6 +309,17 @@ print('\n')
 tuple_val = (1, 2, 3, 4, 5) 
   
 print ("The tuple hash value is : " + str(hash(tuple_val))) 
+
+
+# Store values in a list with new variables.
+
+list = [1.00, 3.56, 2.789, 4.5]
+a, b, c, d = list
+
+print(a)
+print(b)
+print(c)
+print(d)
 
 
 # Timeit module.
@@ -353,3 +365,14 @@ print(hash(inf))
 print(sys.hash_info.inf)
 
 
+# Create a single string from all the elements in a variable.
+
+a = ["Moore's", "Law:", "The", "power", "of", "computers", "per", "unit",
+     "cost", "doubles", "every", "24", "months"]
+
+print(" ".join(a))
+
+
+# Print two words multiple times with one line of code.
+
+print("happy "*2+' '+"joy "*2)
