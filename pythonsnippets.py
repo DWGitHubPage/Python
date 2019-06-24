@@ -1,5 +1,5 @@
 # Python3.7.3
-"""bz2, help with a file, looking up attributes & methods, import sys, path of module, 
+"""bz2, bcrypt, help with a file, looking up attributes & methods, import sys, path of module, 
 built-in LRU cache, f-strings, pathlib, type hinting, enumeration, wrapping an iterable 
 with enumerate, iterable unpacking, data classes, pretty printing, grouping data by 
 attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
@@ -25,6 +25,13 @@ print(len(data) / len(c)) # Data compression ratio.
 
 d = bz2.decompress(c) 
 print(data == d) # Check equality to original object after round-trip.
+
+
+# Bcrypt password generator.
+
+from flask_bcrypt import Bcrypt
+bcrypt = Bcrypt()
+bcrypt.generate_password_hash('testing')
 
 
 # Checking version of Python.
