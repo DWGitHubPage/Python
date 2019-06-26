@@ -39,9 +39,19 @@ bcrypt.generate_password_hash('testing')
 import os
 os.urandom(24) # Or whatever length of a key you want.
 
+# To create a hex string (to possibly store in a JSON file).
+
+print(os.urandom(24).hex())
+
 # Then put that key in your __init__.py file
 
 app.config['SECRET_KEY']='\x88\xb7\x0b\xf2%\x18yyP\x01\xd8H\xcd\x87\x101'
+
+# Create a secret key using secrets library.
+
+import secrets
+
+secrets.token_urlsafe(16)
 
 
 # Checking version of Python.
