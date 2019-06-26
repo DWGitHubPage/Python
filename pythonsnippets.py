@@ -5,7 +5,7 @@ with enumerate, iterable unpacking, data classes, pretty printing, grouping data
 attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
 inserting numbers into list, check memory usage of object, howdoi, open URL's, 
 hash, storing values in a list with new variables, timeit, the hash of infinity in 
-Python matches pi, creating a string from all the elements in a variable, printing words multiple 
+Python matches pi, creating a string from all the elements in a variable, trees on command line, printing words multiple 
 times with one line of code. """
 
 
@@ -387,6 +387,12 @@ a = ["Moore's", "Law:", "The", "power", "of", "computers", "per", "unit",
      "cost", "doubles", "every", "24", "months"]
 
 print(" ".join(a))
+
+
+# Finding the tree of directories & files in terminal.
+
+tree Desktop/Python # or
+tree Desktop/Flask_Blog
 
 
 # Print two words multiple times with one line of code.
