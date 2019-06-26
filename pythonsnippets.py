@@ -1,5 +1,5 @@
 # Python3.7.3
-"""bz2, bcrypt, help with a file, looking up attributes & methods, import sys, path of module, 
+"""bz2, bcrypt, generating secret key, help with a file, looking up attributes & methods, import sys, path of module, 
 built-in LRU cache, f-strings, pathlib, type hinting, enumeration, wrapping an iterable 
 with enumerate, iterable unpacking, data classes, pretty printing, grouping data by 
 attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
@@ -32,6 +32,16 @@ print(data == d) # Check equality to original object after round-trip.
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt()
 bcrypt.generate_password_hash('testing')
+
+
+# Generating secret key for flask app.
+
+import os
+os.urandom(24) # Or whatever length of a key you want.
+
+# Then put that key in your __init__.py file
+
+app.config['SECRET_KEY']='\x88\xb7\x0b\xf2%\x18yyP\x01\xd8H\xcd\x87\x101'
 
 
 # Checking version of Python.
