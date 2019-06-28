@@ -64,6 +64,13 @@ import a_module
 print(a_module.__file__)
 
 
+# Finding the absolute path for file or directory using os.
+
+import os
+
+os.path.abspath('fizzbuzz.py')
+
+
 # Breakpoint syntax.
 import pdb; pdb.set_trace()
 
