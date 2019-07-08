@@ -6,7 +6,7 @@ attributes, removing duplicates, coloring gradient pixels, grouping data by attr
 inserting numbers into list, check memory usage of object, howdoi, open URL's, 
 hash, storing values in a list with new variables, timeit, the hash of infinity in 
 Python matches pi, creating a string from all the elements in a variable, trees on command line, printing words multiple 
-times with one line of code. """
+times with one line of code, printing one sentence on two separate lines. """
 
 
 # Bz2.
@@ -399,3 +399,12 @@ tree Desktop/Flask_Blog
 # Print two words multiple times with one line of code.
 
 print("happy "*2+' '+"joy "*2)
+
+
+#Printing one sentence on two lines.
+
+a = "Printing one sentence"
+b = "on two lines."
+
+print(a, b, sep='\n')
+
