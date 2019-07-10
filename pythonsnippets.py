@@ -5,7 +5,7 @@ with enumerate, iterable unpacking, data classes, pretty printing, grouping data
 attributes, removing duplicates, coloring gradient pixels, grouping data by attributes, 
 inserting numbers into list, check memory usage of object, howdoi, open URL's, 
 hash, storing values in a list with new variables, timeit, the hash of infinity in 
-Python matches pi, creating a string from all the elements in a variable, trees on command line, printing words multiple 
+Python matches pi, removing a file, creating a string from all the elements in a variable, trees on command line, printing words multiple 
 times with one line of code, sep parameter. """
 
 
@@ -391,11 +391,18 @@ howdoi (ask whatever you woul like)
 
 
 # The hash of infinity in Python matches pi.
+
 import sys
 
 inf = float('inf')
 print(hash(inf))
 print(sys.hash_info.inf)
+
+
+# Removing a file.
+
+import os
+os.remove(whatever_file.py)
 
 
 # Create a single string from all the elements in a variable.
