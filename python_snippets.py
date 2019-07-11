@@ -34,7 +34,7 @@
 30. Version of Python
 """
 
-# 1. Bcrypt password generator.
+# 1. Bcrypt Password Generator.
 
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt()
