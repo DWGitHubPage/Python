@@ -1,7 +1,6 @@
 # Python3.7.3
 # Python Snippets.
 
-
 """
 1. Bcrypt Password Generator  
 2. Breakpoint Syntax 
@@ -34,7 +33,6 @@
 29. Type Hinting 
 30. Version of Python
 """
-
 
 # 1. Bcrypt password generator.
 
@@ -474,5 +472,3 @@ def greeting(name: str) -> str:
 # 30. Version of Python.
 import sys
 print("My version Number: {}".format(sys.version))
-
-
