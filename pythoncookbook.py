@@ -272,7 +272,7 @@ def defaultdict_show():
 defaultdict_show()
 
 
-# Keeping Dictionaries in Order
+# 1.7 Keeping Dictionaries in Order
 
 from collections import OrderedDict
 
@@ -290,6 +290,227 @@ import json
 print(json.dumps(d))
 
 
-# Calculating with Dictionaries
+# 1.8 Calculating with Dictionaries
+
+prices = {
+    'ACME': 45.23,
+    'AAPL': 612.78,
+    'IBM': 205.55,
+    'HPQ': 37.20,
+    'FB': 10.75
+}
+
+min_price = min(zip(prices.values(), prices.keys()))
+print(min_price)
+
+max_price = max(zip(prices.values(), prices.keys()))
+print(max_price)
+
+prices_sorted = sorted(zip(prices.values(), prices.keys()))
+print(prices_sorted)
+
+print(min_price)
+print(max_price)
+
+print(min(prices.values()))
+print(max(prices.values()))
+
+print(min(prices, key=lambda k: prices[k]))
+print(max(prices, key=lambda k: prices[k]))
+
+min_value = prices[min(prices, key=lambda k: prices[k])]
+print(min_value)
+
+prices = { 'AAA' : 45.23, 'ZZZ': 45.23 }
+
+print(min(zip(prices.values(), prices.keys()))) 
+print(max(zip(prices.values(), prices.keys())))
 
 
+# 1.9 Finding Commonalities in Two Dictionaries
+
+a = {
+    'x' : 1,
+    'y' : 2,
+    'z' : 3
+}
+
+b = {
+    'w' : 10,
+    'x' : 11,
+    'y' : 2
+}
+
+# Find keys in common.
+print(a.keys() & b.keys())
+
+# Find keys in a that are not in b.
+print(a.keys() - b.keys())
+
+# Find (key, value) pairs in common.
+print(a.items() & b.items())
+
+# Make a new dictionary with certain keys removed.
+c = {key:a[key] for key in a.keys() - {'z', 'w'}}
+print(c)
+
+
+# 1.10 Removing Duplicates from a Sequence while Maintaining Order
+
+# If they are hashable you can use this:
+def dedupe(items):
+    seen = set()
+    for item in items:
+        if item not in seen:
+            yield item
+            seen.add(item)
+
+a = [1, 5, 2, 1, 9, 1, 5, 10]
+print(list(dedupe(a)))
+
+# Eliminating duplicates in a sequence of unhashable types:
+def dedupe(items, key=None):
+    seen = set()
+    for item in items:
+        val = item if key is None else key(item)
+        if val not in seen:
+            yield item
+            seen.add(val)
+
+a = [ {'x':1, 'y':2}, {'x':1, 'y':3}, {'x':1, 'y':2}, {'x':2, 'y':4}]
+print(list(dedupe(a, key=lambda d: (d['x'],d['y']))))
+print(list(dedupe(a, key=lambda d: d['x'])))
+
+
+# 1.11 Naming a Slice
+
+items = [0, 1, 2, 3, 4, 5, 6]
+a = slice(2, 4)
+
+print(items[2:4])
+print(items[a])
+
+items[a] = [10, 11]
+print(items)
+
+del items[a]
+print(items)
+
+# Get more info. by s.start, s.stop, & s.step.
+
+a = slice(10, 50, 2)
+
+print(a.start)
+print(a.stop)
+print(a.step)
+
+
+# 1.12 Determining the Most Frequently Occurring Items in a Sequence
+# The collections.Counter class is designed for this problem.
+
+words = [
+    'look', 'into', 'my', 'eyes', 'look', 'into', 'my', 'eyes',
+    'the', 'eyes', 'the', 'eyes', 'the', 'eyes', 'not', 'around', 'the',
+    'eyes', "don't", 'look', 'around', 'the', 'eyes', 'look', 'into',
+    'my', 'eyes', "you're", 'under', 'the', 'bed'
+]
+
+from collections import Counter
+word_counts = Counter(words)
+top_five = word_counts.most_common(5)
+print(top_five)
+
+# Count individual words.
+
+print(word_counts['look'])
+print(word_counts['into'])
+
+# Incrementing the count manually.
+
+morewords = ['why', 'are', 'you', 'eys', 'look', 'under', 'the', 'bed']
+for word in morewords:
+    word_counts[word] += 1
+
+print(word_counts['the'])
+
+# Another way using update() method.
+
+word_counts.update(morewords)
+
+a = Counter(words)
+b = Counter(morewords)
+print(a)
+print(b)
+
+# Combine counts.
+
+c = a + b
+print(c)
+
+# Subtracting counts.
+
+d = a - b
+print(d)
+
+
+# 1.13 Sorting a List of Dictionaries by a Common Key
+
+rows = [
+    {'fname': 'Brian', 'lname': 'Jones', 'uid': 1003},
+    {'fname': 'David', 'lname': 'Beazley', 'uid': 1002},
+    {'fname': 'Big', 'lname': 'Jones', 'uid': 1004}
+]
+
+from operator import itemgetter
+
+rows_by_fname = sorted(rows, key=itemgetter('fname'))
+rows_by_uid = sorted(rows, key=itemgetter('uid'))
+
+print(rows_by_fname)
+print(rows_by_uid)
+
+
+# itemgetter() function can also accept multiple keys.
+
+rows_by_lfname = sorted(rows, key=itemgetter('lname', 'fname'))
+print(rows_by_lfname)
+
+
+# Using lambda expressions.
+
+rows_by_fname = sorted(rows, key=lambda r: r['fname'])
+rows_by_lfname = sorted(rows, key=lambda r: (r['lname'],r['fname']))
+
+print(min(rows, key=itemgetter('uid')))
+print(max(rows, key=itemgetter('uid')))
+
+
+# 1.14 Sorting Objects Without Native Comparison Support
+
+class User:
+    def __init__(self, user_id):
+        self.user_id = user_id
+
+    def __repr__(self):
+        return 'User({})'.format(self.user_id)
+
+users = [User(23), User(3), User(99)]
+
+print(users)
+print(sorted(users, key=lambda u: u.user_id))
+
+# Another approach using attrgetter instead of lambda.
+
+"""attrgetter is also a bit faster."""
+
+from operator import attrgetter
+
+print(sorted(users, key=attrgetter('user_id')))
+
+
+# If users had a first_name & last_name you could do this:
+
+by_name = sorted(users, key=attrgetter('last_name', 'first_name'))
+
+print(min(users, key=attrgetter('user_id')))
+print(max(users, key=attrgetter('user_id')))
