@@ -766,6 +766,7 @@ print(s)
 
 """The generator solution above is more memory-efficient."""
 
+
 # 1.20 Combining Multiple Mappings into a Single Mapping
 
 a = { 'x': 1, 'z': 3 }
