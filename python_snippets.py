@@ -343,7 +343,6 @@ pp.pprint(animals, width=1)
 
 # 21. Print Recursive Count of Lines of Python Source Code From My Directory & Prints Total Sloc.
 
-
 import sys
 import os
 
