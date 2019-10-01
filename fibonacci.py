@@ -1,5 +1,5 @@
 # Python3.7.3
-#Fibonacci module to use.
+# Fibonacci module to use.
 
 
 def fib(n):    
