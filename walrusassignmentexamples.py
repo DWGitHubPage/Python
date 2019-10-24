@@ -48,3 +48,8 @@ if number > 40:
 
 if (number := 50) > 40:
     print(number, "is greater than 40.")
+    
+    
+# Fizzbuzz. 
+
+print(*map(lambda n: 'Fizzbuzz '[(i):i+13] if (i := n**4%-15) > -14 else n, range(1,100)))
