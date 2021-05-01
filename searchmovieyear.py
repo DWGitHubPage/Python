@@ -5,7 +5,6 @@ import imdb
    
 imdb = imdb.IMDb()
    
-
 # Searching the movie, not case-sensitive.
 search = imdb.search_movie("Drive")
   
