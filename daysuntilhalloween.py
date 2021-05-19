@@ -1,3 +1,6 @@
+# Python 3.9.5
+# Calculating days until a certain date (Halloween as an example) this year.
+
 import datetime
 
 
@@ -19,5 +22,6 @@ def show_info(self):
 x = holiday()
 now = datetime.datetime.now()
 y = calculate_dates(x, now)
+
 print("Days until Halloween:")
 print(y)
