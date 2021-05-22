@@ -11,27 +11,30 @@
 7. Data Classes 
 8. Enumeration 
 9. F-Strings 
-10. Grouping Data by Attributes
-11. Hash Examples 
-12. Help with a File 
-13. Howdoi 
-14. Insert Into a List 
-15. Iterable Unpacking
-16. Memory Usage of an Object
-17. Opening URL's
-18. Pathlib
-19. Path of a Module 
-20. Pretty Printing 
-21. Print Recursive Count of Lines of Python Source Code From Directory & Print Total Sloc.
-22. Print Words Multiple Times with One Line of Code 
-23. Removing Duplicates 
-24. Secret Key for Flask App 
-25. Sep Parameters
-26. Storing Values in a List with New Variables
-27. Timeit 
-28. Trees on of Files & Directories in Terminal 
-29. Type Hinting 
-30. Version of Python
+10. Get hostname
+11. Get ip address of website
+12. Grouping Data by Attributes
+13. Hash Examples 
+14. Help with a File 
+15. Howdoi 
+16. Insert Into a List 
+17. Iterable Unpacking
+18. Memory Usage of an Object
+19. Opening URL's
+20. Pathlib
+21. Path of a Module 
+22. Pretty Printing 
+23. Print Recursive Count of Lines of Python Source Code From Directory & Print Total Sloc.
+24. Print Words Multiple Times with One Line of Code 
+25. Remove a file
+26. Removing Duplicates 
+27. Secret Key for Flask App 
+28. Sep Parameters
+29. Storing Values in a List with New Variables
+30. Timeit 
+31. Trees on of Files & Directories in Terminal 
+32. Type Hinting 
+33. Version of Python
 """
 
 # 1. Bcrypt Password Generator.
@@ -189,7 +192,26 @@ message = f'{person} has logged in and is working on her first {action}.'
 
 print(message)
 
-# 10. Grouping Data by Attributes.
+
+# 10. Get hostname.
+
+import socket as s
+
+my_hostname = s.gethostname()
+
+print("Your hostname is: " + my_hostname)
+
+
+# 11. Get ip address of website.
+
+host = 'google.com'
+
+ip = s.gethostbyname(host)
+
+print("The ip address of " + host + " is: " + ip)
+
+
+# 12. Grouping Data by Attributes.
 
 from itertools import groupby
 
@@ -208,7 +230,7 @@ for key, group in groupby(data, lambda x: x['animal']):
         print(pet['name'] + " is a " + key)
 
    
-# 11. Hash examples.
+# 13. Hash examples.
 
 int_val = 4
 str_val = 'Hash string value.'
@@ -232,18 +254,18 @@ print(hash(inf))
 print(sys.hash_info.inf)
 
 
-# 12. Help with a File.
+# 14. Help with a File.
 
 import(file you want help on)
 help name of file
 
 
-# 13. Howdoi: Find answers to questions from the command line.
+# 15. Howdoi: Find answers to questions from the command line.
 
 howdoi (ask whatever you would like)
 
 
-# 14. Insert into a List.
+# 16. Insert into a List.
 
 list = ['one', 'two', 'three', 'five']
 
@@ -259,7 +281,7 @@ data[3:3] = [4, 5, 6] # Inserting 4, 5, 6 between 3 & 7.
 print(data)
 
 
-# 15. Iterable Unpacking.
+# 17. Iterable Unpacking.
 
 head, *body, tail = range(5)
 print(head, body, tail)
@@ -275,7 +297,7 @@ first, _, third, *_ = range(10)
 print(first, third)
 
 
-# 16. Memory Usage of an Object.
+# 18. Memory Usage of an Object.
  
 import sys 
 x = 1
@@ -288,7 +310,7 @@ x = 4
 print(id(x))
 
 
-# 17. Opening Url's.
+# 19. Opening Url's.
 
 import webbrowser
 
@@ -311,7 +333,7 @@ webbrowser.open_new_tab(url)
 webbrowser.open_new(url)
 
 
-# 18. Pathlib.
+# 20. Pathlib.
 
 from pathlib import Path
 
@@ -327,12 +349,13 @@ path = root / 'happy_user'
 print(path.resolve())
 
 
-# 19. Path of a Module.
+# 21. Path of a Module.
+
 import a_module
 print(a_module.__file__)
 
 
-# 20. Pretty Printing.
+# 22. Pretty Printing.
 
 import pprint as pp
 animals = [{'animal': 'dog', 'legs': 4, 'breeds': ['Border Collie',
@@ -341,7 +364,7 @@ animals = [{'animal': 'dog', 'legs': 4, 'breeds': ['Border Collie',
 pp.pprint(animals, width=1)
 
 
-# 21. Print Recursive Count of Lines of Python Source Code From My Directory & Prints Total Sloc.
+# 23. Print Recursive Count of Lines of Python Source Code From My Directory & Prints Total Sloc.
 
 import sys
 import os
@@ -350,7 +373,7 @@ cur_path = os.getcwd()
 ignore_set = set(["__init__.py", "count_sourcelines.py"])
 
 
-# 22. Print Words Multiple Times With One Line of Code.
+# 24. Print Words Multiple Times With One Line of Code.
 
 print("happy "*2+' '+"joy "*2)
 
@@ -376,13 +399,13 @@ import secrets
 secrets.token_urlsafe(16)
 
 
-# 23. Remove a file.
+# 25. Remove a file.
 
 import os
 os.remove(whatever_file.py)
 
 
-# 23. Removing duplicates
+# 26. Removing duplicates
 
 from collections import OrderedDict
 
@@ -390,9 +413,10 @@ x = [1, 2, 3, 4, 4, 3, 6, 2, 7]
 print(list(OrderedDict.fromkeys(x)))
 
 
-# 24. Secret key for flask app.
+# 27. Secret key for flask app.
 
 import os
+
 os.urandom(24) # Or whatever length of a key you want.
 
 """Then put that key in your __init__.py file"""
@@ -400,7 +424,7 @@ os.urandom(24) # Or whatever length of a key you want.
 app.config['SECRET_KEY']='\x88\xb7\x0b\xf2%\x18yyP\x01\xd8H\xcd\x87\x101'
   
  
-# 25. Sep paramter.
+# 28. Sep paramter.
 
 """Printing one sentence on two lines."""
 
@@ -429,7 +453,7 @@ print('09','12','2016', sep='-')
 print('kermitthefrog','gmail.com', sep='@') 
 
 
-# 26. Storing Values in a List with New Variables.
+# 29. Storing Values in a List with New Variables.
 
 list = [1.00, 3.56, 2.789, 4.5]
 a, b, c, d = list
@@ -440,7 +464,7 @@ print(c)
 print(d)
 
 
-# 27. Timeit module.
+# 30. Timeit module.
 
 import timeit
 
@@ -451,13 +475,13 @@ timeit.timeit('"-".join([str(n) for n in range(100)])', number=10000)
 timeit.timeit('"-".join(map(str, range(100)))', number=10000)
 
 
-# 28. Trees of Directories & Files in Terminal.
+# 31. Trees of Directories & Files in Terminal.
 
 tree Desktop/Python # or
 tree Desktop/Flask_Blog
 
 
-# 29.Type hinting.
+# 32.Type hinting.
 
 def sentence_has_animal(sentence: str) -> bool:
   return "animal" in sentence
@@ -468,6 +492,6 @@ def greeting(name: str) -> str:
     return'Hello ' + 'name'
  
  
-# 30. Version of Python.
+# 33. Version of Python.
 import sys
 print("My version Number: {}".format(sys.version))
