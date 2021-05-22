@@ -204,6 +204,8 @@ print("Your hostname is: " + my_hostname)
 
 # 11. Get ip address of website.
 
+import socket as s
+
 host = 'google.com'
 
 ip = s.gethostbyname(host)
