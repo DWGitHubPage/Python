@@ -1,7 +1,7 @@
 # A place to put various python code. Algorithms, code snippets, and reference guides.
 
 
-[Index of Pythn Enhancement Proposals (PEPs)](https://www.python.org/dev/peps/)
+[Index of Python Enhancement Proposals (PEPs)](https://www.python.org/dev/peps/)
 
 
 ## To check the most recent version of Python that you have:
