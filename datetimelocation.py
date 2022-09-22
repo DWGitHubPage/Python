@@ -1,7 +1,6 @@
 # Python 3.10.0
 # Getting the date and time of a location around the world.
 
-
 from datetime import datetime
 import pytz
 
